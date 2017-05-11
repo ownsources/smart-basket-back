@@ -8,7 +8,37 @@
 module.exports = {
 
   attributes: {
+    id: {
+      type: 'integer',
+      autoIncrement: true,
+      primaryKey: true
+    },
+    name: {
+      type: 'string',
+      size: 270
+    },
+    description: {
+      type: 'string',
+      size: 270
+    },
+    price: {
+      type: 'integer',
+      size: 11,
+    },
 
+    category: {
+      model: 'category'
+    }
+
+  },
+  beforeCreate: function(obj, next){
+    Products.count().exec(function(err, cnt){
+      if(err) next(err);
+      else{
+        obj['id'] = cnt + 1;
+        next(null);
+      }
+    })
   }
 };
 

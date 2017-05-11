@@ -47,7 +47,7 @@ module.exports.cors = {
   *                                                                          *
   ***************************************************************************/
 
-  // origin: '*',
+  //origin: '*',
 
   /***************************************************************************
   *                                                                          *
@@ -75,4 +75,7 @@ module.exports.cors = {
 
   // headers: 'content-type'
 
+  allRoutes: true,
+  origin: '*',
+  headers: 'Content-Type, Authorization, X-Requested-With, Cache-Control, Accept, Origin, X-Session-ID,Access-Control-Allow-Origin'
 };
