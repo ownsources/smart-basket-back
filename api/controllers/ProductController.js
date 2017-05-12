@@ -16,7 +16,7 @@ module.exports = {
               newProd.push(products[i]);
             }
           }
-          res.json(newProd);
+          res.json(products);
         });
   }
 };
