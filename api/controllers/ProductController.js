@@ -7,7 +7,7 @@
 
 module.exports = {
 	select: function(req, res){
-    Post.find(req.category)
+    Post.find({category:req.category})
         .exec(function (err, products) {
           if (err) return res.send(500);
           res.json(products);
