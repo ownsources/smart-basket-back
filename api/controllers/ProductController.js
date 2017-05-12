@@ -12,11 +12,11 @@ module.exports = {
           if (err) return res.send(500);
           var newProd = [];
           for(i=0; i< products.length; i++){
-            if(products[i].category.id == req.params.category){
+            if(products[i].category == req.params.category){
               newProd.push(products[i]);
             }
           }
-          res.json(products);
+          res.json(newProd);
         });
   }
 };
