@@ -12,7 +12,7 @@ module.exports = {
           if (err) return res.send(500);
           var newProd = [];
           for(i=0; i< products.length; i++){
-            if(products[i].category.id === req.category){
+            if(products[i].category === req.category){
               newProd.push(products[i]);
             }
           }
