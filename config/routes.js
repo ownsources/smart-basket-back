@@ -34,7 +34,8 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
+  //"POST /product/select": {controller: "FooController", action: "bar"}
 
   /***************************************************************************
   *                                                                          *
