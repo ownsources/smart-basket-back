@@ -7,7 +7,7 @@
 
 module.exports = {
 	select: function(req, res){
-    Post.find()
+    Product.find()
         .exec(function (err, products) {
           if (err) return res.send(500);
           var newProd = [];

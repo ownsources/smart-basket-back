@@ -35,7 +35,7 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
-  "get /product/select": {controller: "Product", action: "select"}
+  "get /product/select/": {controller: "Product", action: "select"}
 
   /***************************************************************************
   *                                                                          *
