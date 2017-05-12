@@ -7,10 +7,16 @@
 
 module.exports = {
 	select: function(req, res){
-    Post.find({category:req.category})
+    Post.find()
         .exec(function (err, products) {
           if (err) return res.send(500);
-          res.json(products);
+          var newProd = [];
+          for(i=0; i< products.length; i++){
+            if(products[i].category.id === req.category){
+              newProd.push(products[i]);
+            }
+          }
+          res.json(newProd);
         });
   }
 };
