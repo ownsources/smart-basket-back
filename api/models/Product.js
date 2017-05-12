@@ -32,23 +32,13 @@ module.exports = {
 
   },
   beforeCreate: function (obj, next) {
-    // Product.count().exec(function(err, cnt){
-    //   if(err) next(err);
-    //   else{
-    //     obj['id'] = cnt + 1;
-    //     next(null);
-    //   }
-    // })
-    Product.find()
-      .sort('id DESC')
-      .limit(1)
-      .exec(function (err, cnt) {
-        if (err) next(err);
-        else {
-          obj['id'] = cnt._id + 1;
-          next(null);
-        }
-      });
+    Product.count().exec(function(err, cnt){
+      if(err) next(err);
+      else{
+        obj['id'] = cnt + 1;
+        next(null);
+      }
+    })
   }
 };
 
