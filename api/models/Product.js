@@ -45,7 +45,7 @@ module.exports = {
       .exec(function (err, cnt) {
         if (err) next(err);
         else {
-          obj['id'] = cnt.id + 1;
+          obj['id'] = cnt._id + 1;
           next(null);
         }
       });
